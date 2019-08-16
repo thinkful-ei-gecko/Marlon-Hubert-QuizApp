@@ -4,10 +4,41 @@
     padding: 0;
 }
 
-body{
+body {
     background-color: grey;
 }
 
-.header{
-    font-family: 
+.header {
+    font-family: 'Poppins', sans-serif; 
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    margin-top: 150px;
+}
+
+ul {
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    right: 10px;
+    top: 50px;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.title-page {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
