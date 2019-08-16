@@ -13,8 +13,18 @@ function startQuiz() {
 };
 
 function generateQuestions() {
-    return `<div class ="questions">
-    <h2>Question 1</h2></div>`
+    return `    
+    <section>
+    <form class="question-form">
+      <fieldset name="answers">Select An Answer
+        <input type="radio"> Answer1
+        <input type="radio"> Answer2
+        <input type="radio"> Answer3
+        <input type="radio"> Answer4
+        <button type="button">Next Question</button>
+      </fieldset>
+    </form>
+  </section>`
 }
 
 function generateAnswers() {
