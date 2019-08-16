@@ -13,6 +13,7 @@ header {
     font-family: 'Poppins', sans-serif; 
     font-size: 24px;
     display: block;
+    visibility: hidden;
     text-align: center;
     margin: 100px;
 }
