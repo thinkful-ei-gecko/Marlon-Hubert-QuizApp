@@ -1,14 +1,30 @@
-const STORE = [
-    {
-        question: 'Which character and tv show said this quote? "I am the one who knocks."',
-        answers: [
-            'Walter White from Breaking Bad',
-            'Kyle Chandler from Friday Night Lights',
-            'Marcia Brady from the Brady Bunch',
-            'Fox Mulder from The X-Files',
-            
-        ]
+'use strict';
 
-        ]
-    }
-]
+function startQuiz() {
+    $('.title-page').on('click', '.start-quiz', function(event) {
+        event.preventDefault();
+        $('.title-page').remove();
+    })
+};
+
+function generateQuestion() {
+    
+}
+
+function generateAnswers() {
+
+};
+
+function answersSubmitted() {
+
+};
+
+function correctAnswer() {
+
+};
+
+function wrongAnswer() {
+
+};
+
+$(startQuiz);
