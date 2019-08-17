@@ -1,7 +1,8 @@
 'use strict';
 
-const STORE = [{
-  question: 'Which character and tv show said this quote? "I am the one who knocks."',
+const STORE = [
+  {
+  question: 'Which character and TV show said this quote? "I am the one who knocks."',
   answers: [
     'Walter White from Breaking Bad',
     'Kyle Chandler from Friday Night Lights',
@@ -9,5 +10,5 @@ const STORE = [{
     'Fox Mulder from The X-Files',
   ],
   correctAnswer: 'Walter White from Breaking Bad',
-
-}]
+}
+]

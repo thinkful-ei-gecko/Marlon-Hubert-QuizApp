@@ -8,24 +8,23 @@ function startQuiz() {
         event.preventDefault();
         $('.title-page').remove();
         $('header').css('visibility','visible');
-      
+        $('.questionPage').css('display', 'block');
+        $('.questionNum').html('1');
+        $('.questionPage').html(generateQuestions());
     })
 };
 
 function generateQuestions() {
-    return `    
-    <section>
-    <form class="question-form">
-      <fieldset name="answers">Select An Answer
-        <input type="radio"> Answer1
-        <input type="radio"> Answer2
-        <input type="radio"> Answer3
-        <input type="radio"> Answer4
-        <button type="button">Next Question</button>
-      </fieldset>
-    </form>
-  </section>`
+    return `
+    <div class="question-${questionNum}">
+    <h2>${STORE[questionNum].question}</h2>
+    </div>
+    `
 }
+
+function questionMaker() {
+
+};
 
 function generateAnswers() {
 
@@ -45,4 +44,5 @@ function wrongAnswer() {
 
 
 $(startQuiz);
-$(generateQuestion);
+$(generateQuestions);
+$(questionMaker)
