@@ -7,10 +7,10 @@
 body {
     background-color: grey;
     display: block;
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
-    font-family: 'Poppins', sans-serif; 
     font-size: 24px;
     display: block;
     visibility: hidden;
@@ -35,7 +35,6 @@ li {
 }
 
 .title-page {
-    font-family: 'Poppins', sans-serif; 
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -50,10 +49,35 @@ li {
     margin: 10px;
 }
 .start-quiz{
-    font-family: 'Poppins', sans-serif; 
     height: 50px;
     width: 100px;
     margin: 10px;
     border-radius: 10px;
 }
 
+.questionPage {
+    display: none; 
+}
+
+h2 {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: block;
+    text-align: center;
+}
+
+.answerSelect {
+    display: block;
+    text-align: center;
+}
+
+form .answerSelect-row1 {
+    display: inline-block;
+}
+
+form .answerSelect-row2 {
+    display: block;
+}
