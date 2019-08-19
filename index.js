@@ -4,19 +4,19 @@ let questionNum = 0;
 let currentScore = 0;
 
 function startQuiz() {
-    $('.title-page').on('click', '.start-quiz', function(event) {
-        event.preventDefault();
-        $('.title-page').remove();
-        $('header').hide();
-        $('.questionPage').css('display', 'block');
-        $('.questionNum').html('1');
-        $('generateQuestions')
-    })
+  $('.title-page').on('click', '.start-quiz', function(event) {
+    event.preventDefault();
+    $('.title-page').remove();
+    $('header').hide();
+    $('.questionPage').css('display', 'block');
+    $('.questionNum').html('1');
+    $('generateQuestions')
+  })
 };
 
 // Generates questions to display on the page.
 function generateQuestions() {
-    return `
+  return `
     <div class="question-${questionNum}">
     <h2>${STORE[questionNum].question}</h2>
     </div>
@@ -55,14 +55,14 @@ function questionNumIncrementor() {
 
 // Displays the next question and answers for user to select
 function questionMaker() {
-    $('.questionPage').html(generateQuestions());
+  $('.questionPage').html(generateQuestions());
 };
 
 
 // When user selects an answer and presses button
 function selectAnswer() {
   $('form').on('submit', function(event) {
-      event.preventDefault();
+    event.preventDefault();
     let selected = $('input:checked');
     let answer = selected.val();
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
@@ -95,14 +95,14 @@ function selectCorrectAnswer() {
 
 //Feedback page for selecting the wrong answer
 function selectWrongAnswer() {
-    let rightAnswer = `${STORE[questionNum].correctAnswer}`;
-    $('.questionPage').html(
-      `<div class="wrong-answer">
+  let rightAnswer = `${STORE[questionNum].correctAnswer}`;
+  $('.questionPage').html(
+    `<div class="wrong-answer">
       <img src="" alt=""></img>
         <h2>You are incorrect! The correct answer is "${rightAnswer}"</h2>
           <button type="button" class="nextButton">Next</button>
     </div>`
-    );
+  );
 };
 
 // When the user clicks 'next' button on the feedback page
