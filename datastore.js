@@ -35,6 +35,17 @@ const STORE = [
     answerImage: `<img class = 'answerImage' src = 'https://images2.minutemediacdn.com/image/upload/c_fill,w_912,h_516,f_auto,q_auto,g_auto/shape/cover/entertainment/5b2fefb9fae96f45b7000002.jpeg' alt = 'The Office Image'>`
   },
   {
+    question: '"The truth is out there", is a quote from what TV show?',
+    answers: [
+      'Supernatural',
+      'The X-Files',
+      'Sherlock',
+      'CSI: Miami'
+    ],
+    correctAnswer: 'The X-Files',
+    answerImage: `<img class = 'answerImage' src = 'https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2F1428elm.com%2Ffiles%2F2017%2F04%2FX-Files-1.jpg&c=sc&w=850&h=560' alt = 'The X-Files show image'>`
+  },
+  {
     question: 'Which show is this quote from? ..."Don\'t have a cow, man!."',
     answers: [
       'Joey Tribbiani from Friends',
@@ -55,5 +66,36 @@ const STORE = [
     ],
     correctAnswer: 'Ted Mosby from How I Met Your Mother',
     answerImage: `<img class = 'answerImage' src = 'https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg' alt = 'How I Met Your Mother Title Image'>`
+  },
+  {
+    question: 'This famous phrase is said by which character in Game of Thrones?',
+    answers: [
+      'Daenerys Targaryen',
+      'Tyrion Lannister',
+      'Jon Snow',
+      'Joffrey Baratheon'
+    ],
+    correctAnswer: 'Jon Snow',
+    answerImage: `<img class = 'answerImage' src = 'https://pmctvline2.files.wordpress.com/2016/02/game-of-thrones-jon-snow.jpg?w=620' alt = 'Image of Jon Snow from Games of Thrones tv series'>`
+  },
+  {
+    question: `Which show is the quote from? There's no 'I' in team. There's a 'me' though, if you jumble it up`,
+    answer: [
+
+    ],
+    correctAnswer: `There's no 'I' in team. There's a 'me' though, if you jumble it up.`,
+    answerImage: `<img class = 'answerImage' src = 'https://img00.deviantart.net/574b/i/2015/121/1/d/house_md_2_by_kot1ka-d2ziuc6.png alt = 'House MD tv show image'>`
+  },
+  {
+    question: 'filler',
+    answer: [],
+    correctAnswer: 'Pivot! Pivot! Pivot! Pivot! Pivot! Pivot!',
+    answerImage: `<img class = 'answerImage' src = 'https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg' alt = 'Friends sitcom show image'>`
+  },
+  {
+    question: 'filler',
+    answer: [],
+    correctAnswer: `"You're born alone and you die alone and this world just drops a bunch of rules on top of you to make you forget those facts. But I never forget. I'm living like there's no tomorrow, because there isn't one."`,
+    answerImage: `<img class = 'answerImage src = 'https://d362wsx8rkw9qn.cloudfront.net/assets/sm/upload/48/3o/zi/89/adspace_11.jpg' alt = 'Mad Men tv show image'>`
   }
 ];
