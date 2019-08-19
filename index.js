@@ -88,21 +88,22 @@ function selectCorrectAnswer() {
   let imgLink = `${STORE[questionNum].answerImage}`
   $('.questionPage').html(
     `<div class="correct-answer">
-    ${imgLink}
-      <h2>You are correct!</h2>
-        <button type="button" class="nextButton">Next</button>
-  </div>`
+       <h3>You are correct!</h3>
+       ${imgLink}
+      <button type="button" class="nextButton">Next</button>
+     </div>`
   );
 };
 
 //Feedback page for selecting the wrong answer
 function selectWrongAnswer() {
+  let imgLink = `${STORE[questionNum].answerImage}`
   let rightAnswer = `${STORE[questionNum].correctAnswer}`;
   $('.questionPage').html(
     `<div class="wrong-answer">
-      <img src="" alt=""></img>
-        <h2>You are incorrect! The correct answer is "${rightAnswer}"</h2>
-          <button type="button" class="nextButton">Next</button>
+    <h3>You are incorrect! The correct answer is "${rightAnswer}"</h3>
+    ${imgLink}
+    <button type="button" class="nextButton">Next</button>
     </div>`
   );
 };
