@@ -5,10 +5,10 @@ let currentScore = 0;
 
 //Starts the quiz
 function startQuiz() {
-  $('.title-page').on('click', '.start-quiz', function(event) {
+  $('.title-page').on('click', '.start-quiz', function (event) {
     event.preventDefault();
     $('.title-page').remove();
-    $('header').hide();
+    $('header').show();
     $('.questionPage').css('display', 'block');
     $('.questionNum').html('1');
     generateQuestions();
@@ -25,16 +25,16 @@ function generateQuestions() {
     <form class="question-form">
       <fieldset name="answers" id="answer-group1">
         <label class="answerSelect row1">
-          <input type ="radio" class = "selectButton" tabindex="1" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
+          <input type ="radio" class="selectButton" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
         </label>
         <label class="answerSelect row1">
-          <input type="radio" class = "selectButton" tabindex="2" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
+          <input type="radio" class="selectButton" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
         </label>
         <label class="answerSelect row2">
-          <input type="radio" class = "selectButton" tabindex="3" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
+          <input type="radio" class="selectButton" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
         </label>
         <label class="answerSelect row2">
-          <input type="radio" class = "selectButton" tabindex="4" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
+          <input type="radio" class="selectButton" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
         </label>
         <button type="submit" class="submitButton">Next Question</button>
       </fieldset>
@@ -61,13 +61,13 @@ function questionMaker() {
 
 // When user selects an answer and presses button
 function submitAnswer() {
-  $('form').on('click','.submitButton', function(event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
     let selected = $('input:checked');
     let answer = selected.val();
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
 
-    if (answer === rightAnswer && questionNum <= 9) {
+    if (answer === rightAnswer) {
       selectCorrectAnswer();
       scoreUpdater();
     } else {
@@ -109,7 +109,7 @@ function selectWrongAnswer() {
 };
 
 function feedbackPage() {
-  $('.questionPage').on('click', '.nextButton', function(event) {
+  $('.questionPage').on('click', '.nextButton', function (event) {
     if (currentScore > 8) {
       $(this).html(`
       <div class="feedback-container">
@@ -117,17 +117,17 @@ function feedbackPage() {
       <p>You are a television trivia wizard!</p>
       </div>
       `)
-    } else if(currentScore > 4 && currentScore < 8) {
+    } else if (currentScore > 4 && currentScore < 8) {
       $(this).html(
-      `<div class="feedback-container">
+        `<div class="feedback-container">
       <h2>You got ${questionNum} out of 10 corrent!</h2>
-      <p>Subscribe to your next netflix subcription</p>
+      <p>Hurry and get your next monthly Netflix subscription!</p>
       </div>`)
     } else {
       $(this).html(
-      `<div class="feedback-container">
+        `<div class="feedback-container">
       <h2>You got ${questionNum} out of 10 corrent!</h2>
-      <p>filler</p>
+      <p>Give yourself a pat on the back for trying.</p>
       </div>`)
     }
   });
@@ -135,7 +135,7 @@ function feedbackPage() {
 
 // When the user clicks 'next' button on the feedback page
 function nextQuestionGenerator() {
-  $('.questionPage').on('click', '.nextButton', function(event) {
+  $('.questionPage').on('click', '.nextButton', function (event) {
     questionNumIncrementor();
     questionMaker();
     generateQuestions();
@@ -155,7 +155,7 @@ function resultPage() {
 
 //Reset's the quiz from the result page
 function resetQuiz() {
-  $('.questionPage').on('click', '#reset-button', function(event) {
+  $('.questionPage').on('click', '#reset-button', function (event) {
     initialize();
   })
 }
