@@ -11,7 +11,7 @@ function startQuiz() {
     $('header').hide();
     $('.questionPage').css('display', 'block');
     $('.questionNum').html('1');
-    generateQuestions()
+    $('generateQuestions')
   })
 };
 
@@ -61,13 +61,13 @@ function questionMaker() {
 
 // When user selects an answer and presses button
 function submitAnswer() {
-  $('form').on('click','.submitButton', function(event) {
+  $('form').on('submit','.submitButton', function(event) {
     event.preventDefault();
     let selected = $('input:checked');
     let answer = selected.val();
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
 
-    if (answer === rightAnswer && questionNum <= 9) {
+    if (answer === rightAnswer && questionNum === 10) {
       selectCorrectAnswer();
       scoreUpdater();
     } else {
@@ -138,7 +138,7 @@ function nextQuestionGenerator() {
     questionNumIncrementor();
     questionMaker();
     generateQuestions();
-    submitAnswer();
+    selectAnswer();
   });
 }
 
@@ -163,7 +163,7 @@ function resetQuiz() {
 function initialize() {
   startQuiz();
   questionMaker();
-  submitAnswer();
+  selectAnswer();
   nextQuestionGenerator();
 }
 
