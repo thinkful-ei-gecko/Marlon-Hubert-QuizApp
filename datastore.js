@@ -1,7 +1,7 @@
 'use strict';
 
 const STORE = [
-  {
+{
   question: 'Which character and TV show said this quote? "I am the one who knocks."',
   answers: [
     'Walter White from Breaking Bad',
@@ -20,8 +20,5 @@ const STORE = [
     'Lost'
   ],
   correctAnswer: 'Star Trek'
-},
-{
-
 }
-]
+];

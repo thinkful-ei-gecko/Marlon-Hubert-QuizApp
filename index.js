@@ -7,10 +7,10 @@ function startQuiz() {
     $('.title-page').on('click', '.start-quiz', function(event) {
         event.preventDefault();
         $('.title-page').remove();
-        $('header').css('visibility','visible');
+        $('header').hide();
         $('.questionPage').css('display', 'block');
         $('.questionNum').html('1');
-        $('.questionPage').html(generateQuestions());
+        $('generateQuestions')
     })
 };
 
@@ -24,16 +24,16 @@ function generateQuestions() {
     <form class="question-form">
       <fieldset name="answers" id="answer-group1">
         <label class="answerSelect-row1">
-          <input type="radio" value="answer1" name="answer-group1" required> ${STORE[questionNum].answers[0]}
+          <input type="radio" tabindex="1" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
         </label>
         <label class="answerSelect-row1">
-          <input type="radio" value="answer2" name="answer-group1" required> ${STORE[questionNum].answers[1]}
+          <input type="radio" tabindex="2" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
         </label>
         <label class="answerSelect-row2">
-          <input type="radio" value="answer3" name="answer-group1" required> ${STORE[questionNum].answers[2]}
+          <input type="radio" tabindex="3" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
         </label>
         <label class="answerSelect-row2">
-          <input type="radio" value="answer4" name="answer-group1" required> ${STORE[questionNum].answers[3]}
+          <input type="radio" tabindex="4" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
         </label>
         <button type="submit" class="submitButton">Next Question</button>
       </fieldset>
@@ -58,25 +58,22 @@ function questionMaker() {
     $('.questionPage').html(generateQuestions());
 };
 
-function generateAnswers() {
-
-};
 
 // When user selects an answer and presses button
 function selectAnswer() {
-    $('form').on('click', '.submitButton', function(event) {
-        event.preventDefault();
-      let selected = $('input:checked');
-      let answer = selected.val()
-      let rightAnswer = `${STORE[questionNum].correctAnswer}`;
+  $('form').on('submit', function(event) {
+      event.preventDefault();
+    let selected = $('input:checked');
+    let answer = selected.val();
+    let rightAnswer = `${STORE[questionNum].correctAnswer}`;
 
-      if (answer === rightAnswer) {
-        selectCorrectAnswer();
-        scoreUpdater();
-      } else {
-        selectWrongAnswer();
-      }
-    })
+    if (answer === rightAnswer) {
+      selectCorrectAnswer();
+      scoreUpdater();
+    } else {
+      selectWrongAnswer();
+    }
+  })
 };
 
 //Updates score text
@@ -87,31 +84,42 @@ function scoreUpdater() {
 
 //Feedback page for selecting the correct answer
 function selectCorrectAnswer() {
-    $('.questionPage').html(
-      `<div class="correct-answer">
-      <img src="" alt=""></img>
-        <h2>You are correct!</h2>
-          <button type="button" class="nextButton">Next</button>
-    </div>`
-    );
+  $('.questionPage').html(
+    `<div class="correct-answer">
+    <img src="" alt=""></img>
+      <h2>You are correct!</h2>
+        <button type="button" class="nextButton">Next</button>
+  </div>`
+  );
 };
 
 //Feedback page for selecting the wrong answer
 function selectWrongAnswer() {
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
+    $('.questionPage').html(
+      `<div class="wrong-answer">
+      <img src="" alt=""></img>
+        <h2>You are incorrect! The correct answer is "${rightAnswer}"</h2>
+          <button type="button" class="nextButton">Next</button>
+    </div>`
+    );
 };
 
 // When the user clicks 'next' button on the feedback page
 function nextQuestionGenerator() {
-
+  $('.questionPage').on('click', '.nextButton', function(event) {
+    questionNumIncrementor();
+    questionMaker();
+    selectAnswer();
+  });
 }
 
 
 function initialize() {
-  $(startQuiz);
-  $(generateQuestions);
-  $(questionMaker);
-  $(selectAnswer);
+  startQuiz();
+  questionMaker();
+  selectAnswer();
+  nextQuestionGenerator();
 }
 
-initialize();
+$(initialize);

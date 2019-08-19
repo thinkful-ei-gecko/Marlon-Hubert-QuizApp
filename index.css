@@ -81,3 +81,8 @@ form .answerSelect-row1 {
 form .answerSelect-row2 {
     display: block;
 }
+
+.correct-answer, .wrong-answer {
+    display: block;
+    text-align: center;
+}
