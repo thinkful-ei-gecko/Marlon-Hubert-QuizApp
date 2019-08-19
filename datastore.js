@@ -63,4 +63,4 @@ const STORE = [
     answerImage: `<img class = 'answerImage' img src = https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg
   img alt = 'How I Met Your Mother Title Image'>`
   },
-]
+];
