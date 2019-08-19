@@ -3,6 +3,7 @@
 let questionNum = 0;
 let currentScore = 0;
 
+//Starts the quiz
 function startQuiz() {
   $('.title-page').on('click', '.start-quiz', function(event) {
     event.preventDefault();
@@ -67,11 +68,12 @@ function selectAnswer() {
     let answer = selected.val();
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
 
-    if (answer === rightAnswer) {
+    if (answer === rightAnswer && questionNum === 10) {
       selectCorrectAnswer();
       scoreUpdater();
     } else {
       selectWrongAnswer();
+      resultPage();
     }
   })
 };
@@ -110,11 +112,29 @@ function nextQuestionGenerator() {
   $('.questionPage').on('click', '.nextButton', function(event) {
     questionNumIncrementor();
     questionMaker();
+    generateQuestions();
     selectAnswer();
   });
 }
 
+//Result page after the last question is answered
+function resultPage() {
+  $('.questionPage').html(`
+  <section id="feedback-page">
+    <h2>Final Score: You got ${correctAnswer} out of 10 questions correct</h2>
+    <button id="reset-button"> One more time!</button>
+  </section>
+  `);
+}
 
+//Reset's the quiz from the result page
+function resetQuiz() {
+  $('.questionPage').on('click', '#reset-button', function(event) {
+    initialize();
+  })
+}
+
+// Starts the quiz
 function initialize() {
   startQuiz();
   questionMaker();
