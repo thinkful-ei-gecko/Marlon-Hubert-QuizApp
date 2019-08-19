@@ -25,18 +25,18 @@ function generateQuestions() {
     <form class="question-form">
       <fieldset name="answers" id="answer-group1">
         <label class="answerSelect row1">
-          <button type="button" class = "selectButton" tabindex="1" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
+          <input type ="radio" class = "selectButton" tabindex="1" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
         </label>
         <label class="answerSelect row1">
-          <button type="button" class = "selectButton" tabindex="2" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
+          <input type="radio" class = "selectButton" tabindex="2" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
         </label>
         <label class="answerSelect row2">
-          <button type="button" class = "selectButton" tabindex="3" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
+          <input type="radio" class = "selectButton" tabindex="3" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
         </label>
         <label class="answerSelect row2">
-          <button type="button" class = "selectButton" tabindex="4" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
+          <input type="radio" class = "selectButton" tabindex="4" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
         </label>
-        <button type="button" class="submitButton">Next Question</button>
+        <button type="submit" class="submitButton">Next Question</button>
       </fieldset>
     </form>
   </section>
@@ -58,14 +58,6 @@ function questionNumIncrementor() {
 function questionMaker() {
   $('.questionPage').html(generateQuestions());
 };
-
-function selectAnswer(){
-  $('form').on('click', '.selectButton', function(event){
-    event.preventDefault();
-    let selectedAnswer = $(this).val()
-    $(event.currentTarget).closest('button').css('background-color', 'blue');
-  })
-}
 
 // When user selects an answer and presses button
 function submitAnswer() {

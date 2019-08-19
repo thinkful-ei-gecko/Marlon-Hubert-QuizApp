@@ -23,7 +23,7 @@ const STORE = [
       'Lost',
     ],
     correctAnswer: 'Star Trek',
-    answerImage: `<img class = 'answerImage' src = https://pmcvariety.files.wordpress.com/2014/11/star-trek.jpg?w=1000&h=563&crop=1>' alt = 'Star Trek Title Image'>`
+    answerImage: `<img class = 'answerImage' src = 'https://pmcvariety.files.wordpress.com/2014/11/star-trek.jpg?w=1000&h=563&crop=1' alt = 'Star Trek Title Image'>`
   },
   {
     question: 'Which show is this quote from? ..."I sing in the shower. Sometimes I spend too much time volunteering. Occasionally I\'ll hit somebody with my car."',
@@ -57,6 +57,6 @@ const STORE = [
       'Joey Tribbiani from Friends'
     ],
     correctAnswer: 'Ted Mosby from How I Met Your Mother',
-    answerImage: `<img class = 'answerImage' src = https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg alt = 'How I Met Your Mother Title Image'>`
+    answerImage: `<img class = 'answerImage' src = 'https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg' alt = 'How I Met Your Mother Title Image'>`
   },
-]
+];
