@@ -17,7 +17,8 @@ function startQuiz() {
 
 // Generates questions to display on the page.
 function generateQuestions() {
-  return `
+  if (questionNum < STORE.length) {
+    return `
     <div class="question-${questionNum}">
     <h2>${STORE[questionNum].question}</h2>
     </div>
@@ -41,6 +42,10 @@ function generateQuestions() {
     </form>
   </section>
     `
+  } else {
+    feedbackPage();
+    resetQuiz();
+  }
 }
 
 //increments score
@@ -67,7 +72,7 @@ function submitAnswer() {
     let answer = selected.val();
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
 
-    if (answer === rightAnswer || questionNum <= 9) {
+    if (answer === rightAnswer) {
       selectCorrectAnswer();
       scoreUpdater();
     } else {
@@ -126,7 +131,7 @@ function feedbackPage() {
     } else {
       $(this).html(
       `<div class="feedback-container">
-      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <h2>You got ${questionNum} out of 10 corret!</h2>
       <p>Give yourself a pat on the back for trying.</p>
       </div>`)
     }
