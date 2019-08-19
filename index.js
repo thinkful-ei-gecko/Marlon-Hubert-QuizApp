@@ -24,18 +24,18 @@ function generateQuestions() {
     <form class="question-form">
       <fieldset name="answers" id="answer-group1">
         <label class="answerSelect-row1">
-          <input type="radio" tabindex="1" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
+          <button type="button" tabindex="1" value="${STORE[questionNum].answers[0]}" name="answer-group1" required> ${STORE[questionNum].answers[0]}
         </label>
         <label class="answerSelect-row1">
-          <input type="radio" tabindex="2" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
+          <button type="button" tabindex="2" value="${STORE[questionNum].answers[1]}" name="answer-group1" required> ${STORE[questionNum].answers[1]}
         </label>
         <label class="answerSelect-row2">
-          <input type="radio" tabindex="3" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
+          <button type="button" tabindex="3" value="${STORE[questionNum].answers[2]}" name="answer-group1" required> ${STORE[questionNum].answers[2]}
         </label>
         <label class="answerSelect-row2">
-          <input type="radio" tabindex="4" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
+          <button type="button" tabindex="4" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
         </label>
-        <button type="submit" class="submitButton">Next Question</button>
+        <button type="button" class="submitButton">Next Question</button>
       </fieldset>
     </form>
   </section>
@@ -84,9 +84,10 @@ function scoreUpdater() {
 
 //Feedback page for selecting the correct answer
 function selectCorrectAnswer() {
+  let imgLink = `${STORE[questionNum].answerImage}`
   $('.questionPage').html(
     `<div class="correct-answer">
-    <img src="" alt=""></img>
+    ${imgLink}
       <h2>You are correct!</h2>
         <button type="button" class="nextButton">Next</button>
   </div>`
@@ -96,14 +97,40 @@ function selectCorrectAnswer() {
 //Feedback page for selecting the wrong answer
 function selectWrongAnswer() {
     let rightAnswer = `${STORE[questionNum].correctAnswer}`;
+    let imgLink = `${STORE[questionNum].answerImage}`
     $('.questionPage').html(
       `<div class="wrong-answer">
-      <img src="" alt=""></img>
+      ${imgLink}
         <h2>You are incorrect! The correct answer is "${rightAnswer}"</h2>
           <button type="button" class="nextButton">Next</button>
     </div>`
     );
 };
+
+function feedbackPage() {
+  $('.questionPage').on('click', '.nextButton', function(event) {
+    if (currentScore > 8) {
+      $(this).html(`
+      <div class="feedback-container">
+      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <p>You are a television trivia wizard!</p>
+      </div>
+      `)
+    } else if(currentScore > 4 && currentScore < 8) {
+      $(this).html(
+      `<div class="feedback-container">
+      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <p>Subscribe to your next netflix subcription</p>
+      </div>`)
+    } else {
+      $(this).html(
+      `<div class="feedback-container">
+      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <p>filler</p>
+      </div>`)
+    }
+  });
+}
 
 // When the user clicks 'next' button on the feedback page
 function nextQuestionGenerator() {
