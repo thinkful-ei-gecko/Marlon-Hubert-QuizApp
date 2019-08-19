@@ -5,7 +5,7 @@ let currentScore = 0;
 
 //Starts the quiz
 function startQuiz() {
-  $('.title-page').on('click', '.start-quiz', function(event) {
+  $('.title-page').on('click', '.start-quiz', function (event) {
     event.preventDefault();
     $('.title-page').remove();
     $('header').show();
@@ -66,7 +66,7 @@ function questionMaker() {
 
 // When user selects an answer and presses button
 function submitAnswer() {
-  $('form').on('submit', function(event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
     let selected = $('input:checked');
     let answer = selected.val();
@@ -93,28 +93,28 @@ function selectCorrectAnswer() {
   let imgLink = `${STORE[questionNum].answerImage}`
   $('.questionPage').html(
     `<div class="correct-answer">
-    ${imgLink}
-      <h2>You are correct!</h2>
-        <button type="button" class="nextButton">Next</button>
-  </div>`
+       <h3>You are correct!</h3>
+       ${imgLink}
+      <button type="button" class="nextButton">Next</button>
+     </div>`
   );
 };
 
 //Feedback page for selecting the wrong answer
 function selectWrongAnswer() {
-  let rightAnswer = `${STORE[questionNum].correctAnswer}`;
   let imgLink = `${STORE[questionNum].answerImage}`
+  let rightAnswer = `${STORE[questionNum].correctAnswer}`;
   $('.questionPage').html(
     `<div class="wrong-answer">
-      ${imgLink}
-        <h2>You are incorrect! The correct answer is "${rightAnswer}"</h2>
-          <button type="button" class="nextButton">Next</button>
+    <h3>You are incorrect! The correct answer is "${rightAnswer}"</h3>
+    ${imgLink}
+    <button type="button" class="nextButton">Next</button>
     </div>`
   );
 };
 
 function feedbackPage() {
-  $('.questionPage').on('click', '.nextButton', function(event) {
+  $('.questionPage').on('click', '.nextButton', function (event) {
     if (currentScore > 8) {
       $(this).html(`
       <div class="feedback-container">
@@ -122,16 +122,16 @@ function feedbackPage() {
       <p>You are a television trivia wizard!</p>
       </div>
       `)
-    } else if(currentScore > 4 && currentScore < 8) {
+    } else if (currentScore > 4 && currentScore < 8) {
       $(this).html(
-      `<div class="feedback-container">
+        `<div class="feedback-container">
       <h2>You got ${questionNum} out of 10 corrent!</h2>
       <p>Hurry and get your next monthly Netflix subscription!</p>
       </div>`)
     } else {
       $(this).html(
-      `<div class="feedback-container">
-      <h2>You got ${questionNum} out of 10 corret!</h2>
+        `<div class="feedback-container">
+      <h2>You got ${questionNum} out of 10 corrent!</h2>
       <p>Give yourself a pat on the back for trying.</p>
       </div>`)
     }
@@ -140,7 +140,7 @@ function feedbackPage() {
 
 // When the user clicks 'next' button on the feedback page
 function nextQuestionGenerator() {
-  $('.questionPage').on('click', '.nextButton', function(event) {
+  $('.questionPage').on('click', '.nextButton', function (event) {
     questionNumIncrementor();
     questionMaker();
     generateQuestions();
@@ -160,7 +160,7 @@ function resultPage() {
 
 //Reset's the quiz from the result page
 function resetQuiz() {
-  $('.questionPage').on('click', '#reset-button', function(event) {
+  $('.questionPage').on('click', '#reset-button', function (event) {
     initialize();
   })
 }
