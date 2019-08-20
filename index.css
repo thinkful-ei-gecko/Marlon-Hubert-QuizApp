@@ -5,9 +5,13 @@
 }
 /*Mobile first title page*/
 body {
-    background-color: grey;
     display: block;
     font-family: 'Poppins', sans-serif;
+    background-image: url("tv_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 header {
@@ -23,6 +27,7 @@ ul {
     display: inline-block;
     position: absolute;
     text-align: right;
+    color: white;
     right: 10px;
     top: 50px;
 }
@@ -41,7 +46,7 @@ li {
     justify-content: center;
     align-items: center;
     background-color: white;
-    margin: auto;
+    margin: 200px;
     border-radius: 10px;
 }
 
@@ -87,6 +92,25 @@ form input[type="radio"]:checked + answerSelect{
     background-color: blue;
 }
 
+.answerSelect {
+    background-color: rgb(128, 128, 128);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    opacity: 0.1s;
+    transition: 0.3s;
+    font-size: 16px;
+    margin: 4px 2px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.answerSelect:hover {
+    opacity: 1;
+}
+
 fieldset label {
     display: flex;
     width: auto;
@@ -109,7 +133,7 @@ fieldset label {
 /*feedback page for correct & incorrect*/
 
 h3{
-    font-size: 30px;
+    font-size: 2vw;
 }
 .correct-answer{
     display: flex;
@@ -135,18 +159,63 @@ h3{
 
 .answerImage {
     width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
 }
 
 .nextButton{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 40%;
     height: 30px;
 }
 
-@media screen and (min-width 700px){
-
+.feedback-container {
+    display: block;
+    text-align: center;
 }
 
-@media screen and (min-width: 1024px){
-    
+/* less than 768px*/
+@media screen and (max-width: 768px) { 
+    .title-page, .h1, .start-quiz {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .start-quiz {
+        height: 50px;
+        width: 100px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        word-wrap: break-word;
+    }
+}
+
+/*less than 1024px*/
+@media screen and (max-width: 1024px){
+    .questionPage, .start-quiz {
+        width: 80%;
+        margin-bottom: 100px
+    }
+
+    .title-page, h1, .start-quiz {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .start-quiz {
+        height: 50px;
+        width: 100px;
+        margin: 10px;
+        border-radius: 10px;
+    }
 }

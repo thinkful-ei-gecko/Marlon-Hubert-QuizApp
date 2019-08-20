@@ -45,6 +45,7 @@ function generateQuestions() {
   } else {
     feedbackPage();
     resetQuiz();
+    $('.questionNum').text(10);
   }
 }
 
@@ -77,7 +78,6 @@ function submitAnswer() {
       scoreUpdater();
     } else {
       selectWrongAnswer();
-      resultPage();
     }
   })
 };
@@ -114,28 +114,26 @@ function selectWrongAnswer() {
 };
 
 function feedbackPage() {
-  $('.questionPage').on('click', '.nextButton', function (event) {
-    if (currentScore > 8) {
-      $(this).html(`
+    if (currentScore >= 8) {
+      $('.questionPage').html(`
       <div class="feedback-container">
-      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <h2>You got ${currentScore} out of 10 correct!</h2>
       <p>You are a television trivia wizard!</p>
       </div>
       `)
     } else if (currentScore > 4 && currentScore < 8) {
-      $(this).html(
+      $('.questionPage').html(
         `<div class="feedback-container">
-      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <h2>You got ${currentScore} out of 10 correct!</h2>
       <p>Hurry and get your next monthly Netflix subscription!</p>
       </div>`)
     } else {
-      $(this).html(
+      $('.questionPage').html(
         `<div class="feedback-container">
-      <h2>You got ${questionNum} out of 10 corrent!</h2>
+      <h2>You got ${currentScore} out of 10 correct!</h2>
       <p>Give yourself a pat on the back for trying.</p>
-      </div>`)
+      </div>`);
     }
-  });
 }
 
 // When the user clicks 'next' button on the feedback page
@@ -143,25 +141,25 @@ function nextQuestionGenerator() {
   $('.questionPage').on('click', '.nextButton', function (event) {
     questionNumIncrementor();
     questionMaker();
-    generateQuestions();
     submitAnswer();
   });
 }
 
 //Result page after the last question is answered
+/*
 function resultPage() {
   $('.questionPage').html(`
   <section id="feedback-page">
-    <h2>Final Score: You got ${correctAnswer} out of 10 questions correct</h2>
+    <h2>Final Score: You got ${currentScore} out of 10 questions correct</h2>
     <button id="reset-button"> One more time!</button>
   </section>
   `);
 }
-
+*/
 //Reset's the quiz from the result page
 function resetQuiz() {
   $('.questionPage').on('click', '#reset-button', function (event) {
-    initialize();
+    nextQuestionGenerator();
   })
 }
 

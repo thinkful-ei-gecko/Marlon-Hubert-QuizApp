@@ -80,21 +80,34 @@ const STORE = [
   },
   {
     question: `Which show is the quote from? There's no 'I' in team. There's a 'me' though, if you jumble it up`,
-    answer: [
-
+    answers: [
+    'filler',
+    'filler',
+    'filler',
+    'filler'
     ],
     correctAnswer: `There's no 'I' in team. There's a 'me' though, if you jumble it up.`,
     answerImage: `<img class = 'answerImage' src = 'https://img00.deviantart.net/574b/i/2015/121/1/d/house_md_2_by_kot1ka-d2ziuc6.png alt = 'House MD tv show image'>`
   },
   {
     question: 'filler',
-    answer: [],
+    answers: [
+    'filler',
+    'filler',
+    'filler',
+    'filler'
+    ],
     correctAnswer: 'Pivot! Pivot! Pivot! Pivot! Pivot! Pivot!',
     answerImage: `<img class = 'answerImage' src = 'https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg' alt = 'Friends sitcom show image'>`
   },
   {
     question: 'filler',
-    answer: [],
+    answers: [
+    'filler',
+    'filler',
+    'filler',
+    'filler'
+    ],
     correctAnswer: `"You're born alone and you die alone and this world just drops a bunch of rules on top of you to make you forget those facts. But I never forget. I'm living like there's no tomorrow, because there isn't one."`,
     answerImage: `<img class = 'answerImage src = 'https://d362wsx8rkw9qn.cloudfront.net/assets/sm/upload/48/3o/zi/89/adspace_11.jpg' alt = 'Mad Men tv show image'>`
   }
