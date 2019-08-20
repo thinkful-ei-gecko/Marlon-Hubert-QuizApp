@@ -64,6 +64,10 @@ li {
     display: none;
 }
 
+p {
+    color: white;
+}
+
 h2 {
     display: flex;
     width: 50%;
