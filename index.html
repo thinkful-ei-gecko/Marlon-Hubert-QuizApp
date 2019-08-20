@@ -19,15 +19,17 @@
             <li>Score: <span class="quizScore">0</span></li>
         </ul>
     </header>
-    <div class="title-page">
+    <main role="main">
+        <div class="title-page" aria-live='polite'>
         <h1>Welcome to the TV Show Quiz!</h1>
         <button class="start-quiz">
             <span class="button-label">Begin Quiz</span>
         </button>
-    </div>
+        </div>
+    </main>
 
-    <div class="questionPage"> </div>
-    <div class ="feedbackPage"></div>
+    <div class="questionPage" aria-live='polite'> </div>
+    <div class ="feedbackPage" aria-live='polite'></div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="datastore.js"></script>

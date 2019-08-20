@@ -7,7 +7,7 @@
 body {
     display: block;
     font-family: 'Poppins', sans-serif;
-    background-image: url("tv_background.jpg");
+    background-image: url("tv_background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -62,6 +62,10 @@ li {
 /* mobile first question page*/
 .questionPage {
     display: none;
+}
+
+p {
+    color: white;
 }
 
 h2 {
