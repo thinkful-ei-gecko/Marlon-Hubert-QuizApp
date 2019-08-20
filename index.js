@@ -119,6 +119,7 @@ function feedbackPage() {
       <div class="feedback-container">
       <h2>You got ${currentScore} out of 10 correct!</h2>
       <p>You are a television trivia wizard!</p>
+      <button class="restartButton">Try Again!</button>
       </div>
       `)
     } else if (currentScore > 4 && currentScore < 8) {
@@ -126,12 +127,14 @@ function feedbackPage() {
         `<div class="feedback-container">
       <h2>You got ${currentScore} out of 10 correct!</h2>
       <p>Hurry and get your next monthly Netflix subscription!</p>
+      <button class="restartButton">Try Again!</button>
       </div>`)
     } else {
       $('.questionPage').html(
         `<div class="feedback-container">
       <h2>You got ${currentScore} out of 10 correct!</h2>
       <p>Give yourself a pat on the back for trying.</p>
+      <button class="restartButton">Try Again!</button>
       </div>`);
     }
 }
@@ -158,8 +161,9 @@ function resultPage() {
 */
 //Reset's the quiz from the result page
 function resetQuiz() {
-  $('.questionPage').on('click', '#reset-button', function (event) {
-    nextQuestionGenerator();
+  $('.questionPage').on('click', '.restartButton', function (event) {
+    event.preventDefault();
+    generateQuestions();
   })
 }
 
