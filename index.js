@@ -11,7 +11,6 @@ function startQuiz() {
     $('header').show();
     $('.questionPage').css('display', 'block');
     $('.questionNum').html('1');
-    //generateQuestions();
   })
 };
 
