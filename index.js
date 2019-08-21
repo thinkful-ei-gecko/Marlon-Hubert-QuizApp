@@ -168,6 +168,7 @@ function initialize() {
   questionMaker();
   submitAnswer();
   nextQuestionGenerator();
+  resetQuiz();
 }
 
 initialize();
