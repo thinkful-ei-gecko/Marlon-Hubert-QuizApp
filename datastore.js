@@ -10,7 +10,7 @@ const STORE = [
       'Fox Mulder from The X-Files'
     ],
     correctAnswer: 'Walter White from Breaking Bad',
-    answerImage: `<img class = 'answerImage' src = 'https://images.amcnetworks.com/amc.com/wp-content/uploads/2012/06/BB_S5B_004_L.jpg' alt = 'Breaking Bad Title Image'>`
+    answerImage: `<img class = 'answerImage' src = 'https://wallpaperplay.com/walls/full/d/f/c/158834.jpg' alt = 'Breaking Bad Title Image'>`
   },
   {
     question: 'Which show is the following quote from? ..."to boldly go where no man has gone before."',
@@ -32,7 +32,7 @@ const STORE = [
       'Michael Scott from The Office',
     ],
     correctAnswer: 'Michael Scott from The Office',
-    answerImage: `<img class = 'answerImage' src = 'https://images2.minutemediacdn.com/image/upload/c_fill,w_912,h_516,f_auto,q_auto,g_auto/shape/cover/entertainment/5b2fefb9fae96f45b7000002.jpeg' alt = 'The Office Image'>`
+    answerImage: `<img class = 'answerImage' src = 'https://images6.alphacoders.com/872/thumb-1920-872875.jpg' alt = 'The Office Image'>`
   },
   {
     question: '"The truth is out there.", is a quote from what TV show?',
@@ -65,7 +65,7 @@ const STORE = [
       'Joey Tribbiani from Friends'
     ],
     correctAnswer: 'Ted Mosby from How I Met Your Mother',
-    answerImage: `<img class = 'answerImage' src = 'https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg' alt = 'How I Met Your Mother Title Image'>`
+    answerImage: `<img class = 'answerImage' src = 'http://getwallpapers.com/wallpaper/full/a/c/5/947464-how-i-met-your-mother-wallpapers-1920x1080-pictures.jpg' alt = 'How I Met Your Mother Title Image'>`
   },
   {
     question: 'This famous phrase is said by which character in Game of Thrones?',
@@ -76,7 +76,7 @@ const STORE = [
       'Joffrey Baratheon'
     ],
     correctAnswer: 'Jon Snow',
-    answerImage: `<img class = 'answerImage' src = 'https://pmctvline2.files.wordpress.com/2016/02/game-of-thrones-jon-snow.jpg?w=620' alt = 'Image of Jon Snow from Games of Thrones tv series'>`
+    answerImage: `<img class = 'answerImage' src = 'https://hdqwalls.com/download/jon-snow-game-of-thrones-2017-pa-1920x1080.jpg' alt = 'Image of Jon Snow from Games of Thrones tv series'>`
   },
   {
     question: 'Which famous TV character said the following quote? There\'s no \'I\' in team. There\'s a \'me\' though, if you jumble it up',
@@ -87,7 +87,7 @@ const STORE = [
     'Dr. Gregory House from House M.D.'
     ],
     correctAnswer: 'Dr. Gregory House from House M.D.',
-    answerImage: `<img class = 'answerImage' src = 'https://img00.deviantart.net/574b/i/2015/121/1/d/house_md_2_by_kot1ka-d2ziuc6.png' alt = 'House MD tv show image'>`
+    answerImage: `<img class = 'answerImage' src = 'https://blog.cyrildason.com/wp-content/uploads/2016/11/House-MD.png' alt = 'House MD tv show image'>`
   },
   {
     question: 'Which famous TV character said the following quote? "Pivot! Pivot! Pivot! Pivot! Pivot! Pivot".',
@@ -97,8 +97,8 @@ const STORE = [
     'Dwight Schrute from The Office',
     'Danny Tanner from Full House'
     ],
-    correctAnswer: 'Pivot! Pivot! Pivot! Pivot! Pivot! Pivot!',
-    answerImage: `<img class = 'answerImage' src = 'https://miro.medium.com/max/1838/1*NwthyMSOHc8vi0wBLfcakA.jpeg' alt = 'Friends sitcom show image'>`
+    correctAnswer: 'Ross Geller from Friends',
+    answerImage: `<img class = 'answerImage' src = 'https://wallpaperaccess.com/full/782186.jpg' alt = 'Friends sitcom show image'>`
   },
   {
     question: 'Which show is this quote from? "You\'re born alone and you die alone and this world just drops a bunch of rules on top of you to make you forget those facts. But I never forget. I\'m living like there\'s no tomorrow, because there isn\'t one."',
