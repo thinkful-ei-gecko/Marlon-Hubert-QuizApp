@@ -11,7 +11,7 @@ function startQuiz() {
     $('header').show();
     $('.questionPage').css('display', 'block');
     $('.questionNum').html('1');
-    generateQuestions();
+    //generateQuestions();
   })
 };
 
@@ -155,6 +155,10 @@ function resetQuiz() {
     currentScore = 0;
     $('.questionNum').html('0');
     $('.quizScore').html('0');
+    $('header').show();
+    $('.questionPage').css('display', 'block');
+    $('.questionNum').html('1');
+    questionMaker();
   })
 }
 
