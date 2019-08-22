@@ -37,7 +37,7 @@ function generateQuestions() {
         <label class="answerSelect row2">
           <input type="radio" class="selectButton" value="${STORE[questionNum].answers[3]}" name="answer-group1" required> ${STORE[questionNum].answers[3]}
         </label>
-        <button type="submit" class="submitButton">Next Question</button>
+        <button type="submit" class="submitButton">Submit</button>
       </fieldset>
     </form>
   </section>
@@ -95,7 +95,7 @@ function selectCorrectAnswer() {
     `<div class="correct-answer">
        <h3>You are correct!</h3>
        ${imgLink}
-      <button type="button" class="nextButton">Next</button>
+      <button type="button" class="nextButton">Next Question</button>
      </div>`
   );
 };
@@ -108,7 +108,7 @@ function selectWrongAnswer() {
     `<div class="wrong-answer">
     <h3>You are incorrect! The correct answer is "${rightAnswer}"</h3>
     ${imgLink}
-    <button type="button" class="nextButton">Next</button>
+    <button type="button" class="nextButton">Next Question</button>
     </div>`
   );
 };
@@ -153,12 +153,13 @@ function resetQuiz() {
   $('.questionPage').on('click', '.restartButton', function(event) {
     questionNum = 0;
     currentScore = 0;
-    $('.questionNum').html('0');
     $('.quizScore').html('0');
     $('header').show();
     $('.questionPage').css('display', 'block');
     $('.questionNum').html('1');
     questionMaker();
+    submitAnswer();
+    
   })
 }
 
@@ -171,4 +172,4 @@ function initialize() {
   resetQuiz();
 }
 
-initialize();
+$(initialize);

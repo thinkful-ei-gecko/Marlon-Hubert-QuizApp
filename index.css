@@ -49,7 +49,7 @@ li {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 h1{
@@ -63,7 +63,7 @@ h1{
     width: 33%;
     margin-bottom: 30px;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 /* mobile first question page*/
 .questionPage {
@@ -72,6 +72,12 @@ h1{
 
 p {
     color: white;
+    background: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 1vw;
+    padding: 10px;
 }
 
 h2 {
@@ -132,7 +138,6 @@ fieldset label {
 }
 
 .submitButton{
-    font-family: 'Roboto Mono', monospace;
     width: 40%;
     height: 50px;
     font-size: 2vw;
@@ -173,6 +178,8 @@ h3{
     text-align: center;
     justify-content: center;
     align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .answerImage {
@@ -201,10 +208,19 @@ h3{
     text-align: center;
 }
 
+.restartButton {
+    width: 10%;
+    height: 30px;
+    font-size: 1vw;
+    border-radius: 5px;
+    margin: auto;
+}
+
+
 /* less than 768px*/
 @media screen and (max-width: 768px) { 
 
-    .start-quiz, .submitButton, .nextButton {
+    .start-quiz, .submitButton, .nextButton, .restartButton {
         height: 30px;
     }
     
